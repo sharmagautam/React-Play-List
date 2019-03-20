@@ -42,6 +42,9 @@ handleSubmitChange = (event)=>{
   // the value of the input box is controlled by the state as soon as the onChange event will occur 
   // handleUserChange handler will get called, there the value of  state has been changed and the render method get called and 
   // the value of the input box will set by the state.
+
+  // Note: Render method is called if any changes occurs in state or props but we can handle this default behaviour by using the component
+  //  updatating life cycle method called "shouldCompontnUpdate(nextProps, nextState)"
   render() {
       console.log(this.state);
       

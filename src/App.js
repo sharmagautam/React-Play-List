@@ -21,6 +21,7 @@ import './myAppStyle.css';
 import styles from './myAppStyle.module.css';
 
 import Form from './components/Form';
+import RefsDemo from './components/refsDemo';
 
 class App extends Component {
   render() {
@@ -45,8 +46,8 @@ class App extends Component {
         {/* <Namelist/> */}
         {/* <Stylesheet primary={true}/> */}
         {/* <InLine/> */}
-
-        <Form/>
+        {/* <Form/> */}
+            <RefsDemo/>
       </div>
     );
   }
