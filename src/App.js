@@ -31,6 +31,9 @@ import User from './components/user';
 
 import CounterByUsingRenderProps from './components/CounterByUsingRenderProps';
 
+import ComponentC from './components/ComponentC';
+import {UserProvider} from './components/UserContext';
+
 
 class App extends Component {
   render() {
@@ -58,10 +61,13 @@ class App extends Component {
         {/* <Form/> */}
         {/* <RefsDemo/> */}
         {/* <FocusInput/> */}
+
         {/* <ClickCounter name='Gautam'/>   */}
         {/* <HoverCounter/> */}
+
         {/* <ClickCounterTwo/> */}
         {/* <HoverCounterTwo/> */}
+
         {/* <User render={(isLoggedIn)=>isLoggedIn ? 'gautam' : 'Guest'}/> */}
 
         {/* <CounterByUsingRenderProps render={(count, incrementCount)=>(<ClickCounterTwo count={count} incrementCount={incrementCount}/>)}/>1st way of passing */}
@@ -69,7 +75,8 @@ class App extends Component {
        
 
         {/* Second way of passing  */}
-        <CounterByUsingRenderProps >
+
+        {/* <CounterByUsingRenderProps >
         {(count, incrementCount)=>(
         <ClickCounterTwo count={count} incrementCount={incrementCount}/>
         )}
@@ -79,9 +86,14 @@ class App extends Component {
           {(count, incrementCount)=>(
           <HoverCounterTwo count={count} incrementCount={incrementCount}/>
           )}
-        </CounterByUsingRenderProps>
+        </CounterByUsingRenderProps> */}
 
 
+        {/* if u will remove UserProvider thn also in consumer it will take the default value which i have passed in User context*/}
+        <UserProvider value='gautam'>
+         <ComponentC/>
+        </UserProvider>
+        
 
       </div>
     );
