@@ -22,6 +22,9 @@ import styles from './myAppStyle.module.css';
 
 import Form from './components/Form';
 import RefsDemo from './components/refsDemo';
+import FocusInput from './components/FocusInput';
+import ClickCounter from './components/clickCounter';
+import HoverCounter from './components/HoverCounter';
 
 class App extends Component {
   render() {
@@ -47,7 +50,10 @@ class App extends Component {
         {/* <Stylesheet primary={true}/> */}
         {/* <InLine/> */}
         {/* <Form/> */}
-            <RefsDemo/>
+        {/* <RefsDemo/> */}
+        {/* <FocusInput/> */}
+        <ClickCounter name='Gautam'/>  {/* name prop cant not access to the click counter until  */}
+        <HoverCounter/>
       </div>
     );
   }
