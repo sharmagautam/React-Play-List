@@ -25,6 +25,12 @@ import RefsDemo from './components/refsDemo';
 import FocusInput from './components/FocusInput';
 import ClickCounter from './components/clickCounter';
 import HoverCounter from './components/HoverCounter';
+import HoverCounterTwo from './components/HoverCounterTwo';
+import ClickCounterTwo from './components/clickCounterTwo'
+import User from './components/user';
+
+import CounterByUsingRenderProps from './components/CounterByUsingRenderProps';
+
 
 class App extends Component {
   render() {
@@ -52,8 +58,31 @@ class App extends Component {
         {/* <Form/> */}
         {/* <RefsDemo/> */}
         {/* <FocusInput/> */}
-        <ClickCounter name='Gautam'/>  {/* name prop cant not access to the click counter until  */}
-        <HoverCounter/>
+        {/* <ClickCounter name='Gautam'/>   */}
+        {/* <HoverCounter/> */}
+        {/* <ClickCounterTwo/> */}
+        {/* <HoverCounterTwo/> */}
+        {/* <User render={(isLoggedIn)=>isLoggedIn ? 'gautam' : 'Guest'}/> */}
+
+        {/* <CounterByUsingRenderProps render={(count, incrementCount)=>(<ClickCounterTwo count={count} incrementCount={incrementCount}/>)}/>1st way of passing */}
+        {/* <CounterByUsingRenderProps render={(count, incrementCount)=>(<HoverCounterTwo count={count} incrementCount={incrementCount}/>)}/>1st way of passing */}
+       
+
+        {/* Second way of passing  */}
+        <CounterByUsingRenderProps >
+        {(count, incrementCount)=>(
+        <ClickCounterTwo count={count} incrementCount={incrementCount}/>
+        )}
+        </CounterByUsingRenderProps>
+
+        <CounterByUsingRenderProps >
+          {(count, incrementCount)=>(
+          <HoverCounterTwo count={count} incrementCount={incrementCount}/>
+          )}
+        </CounterByUsingRenderProps>
+
+
+
       </div>
     );
   }
